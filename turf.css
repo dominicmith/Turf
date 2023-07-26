@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar Styles */
+nav {
+  background-color: #fff;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  padding: 15px;
+  font-size: 16px;
+  color: #333;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+li:hover {
+  color: #52DE45;
+  cursor: pointer;
+}
+
+/* Navbar Animations */
+li::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #52DE45;
+  transition: 0.3s ease;
+}
+
+li:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+/* Fun Animations */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  display: none;
+  animation: fadeIn 0.3s;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  animation: slideInDown 0.3s;
+}
+
+/* Additional Fun Animations */
+@keyframes slideInDown {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  nav {
+    background-color: #333;
+  }
+  li {
+    color: #fff;
+  }
+  li::before {
+    background-color: #fff;
+  }
+}
+
+
+.BookNow {
+  animation: bounce 1s infinite; /* Another animative effect */
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-300px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.New {
+  animation: slideInLeft 1s ease-in-out infinite; /* Crazy animative effect */
+}
+
+/* Common styles for notice-content */
+.notice-content {
+  height: 50px;
+  background-color: #0f1111;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-container {
+  width: 100%;
+  max-width: 1150px;
+  padding: 0 15px; /* Adjust padding as needed */
+  margin: 0 auto;
+}
+
+.notice-content p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 50px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+/* Animation styles */
+@keyframes slideInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 5;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 2;
+  }
+}
+
+/* Apply animation to .notice-content when the page loads */
+.notice-content {
+  animation: slideInUp 6s ease-in-out;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .text-container {
+    width: 100%;
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .text-container {
+    font-size: 14px;
+  }
+}
+
+/* Styles for scroll buttons */
+#scrollUpButton,
+#scrollDownButton {
+  display: block;
+  width: 100px;
+  height: 40px;
+  background-color: green;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+#scrollUpButton:hover,
+#scrollDownButton:hover {
+  background-color: black ;
+}
+
+#scrollUpButton {
+  position: fixed;
+  top: 10%;
+  bottom: 20px;
+  right: 20px;
+}
+
+#scrollDownButton {
+  position: fixed;
+  bottom: 10%;
+  bottom: 70px;
+  right: 20px;
+}  
+
+
